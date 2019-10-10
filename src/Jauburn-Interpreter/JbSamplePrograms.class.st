@@ -25,3 +25,16 @@ JbSamplePrograms class >> run: method [
 
 	^JbInterpreter new run: (self perform: method)
 ]
+
+{ #category : #'sample programs' }
+JbSamplePrograms class >> sqrtFunction [
+	"square root function"
+	"not implemented -> did not get inputBinding"
+
+	^'var x = 1;
+var y = 10 * x - 1;
+if (y == 9) { 
+   x = 16;
+}
+'
+]

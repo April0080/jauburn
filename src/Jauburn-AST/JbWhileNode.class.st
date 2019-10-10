@@ -1,8 +1,8 @@
 "
-if node class
+while node class
 "
 Class {
-	#name : #JbIfNode,
+	#name : #JbWhileNode,
 	#superclass : #Object,
 	#instVars : [
 		'condition',
@@ -12,27 +12,27 @@ Class {
 }
 
 { #category : #accessing }
-JbIfNode >> condition [
+JbWhileNode >> condition [
 	^ condition
 ]
 
 { #category : #accessing }
-JbIfNode >> condition: anObject [
+JbWhileNode >> condition: anObject [
 	condition := anObject
 ]
 
 { #category : #api }
-JbIfNode >> executeIn: anEnvironment [
+JbWhileNode >> executeIn: anEnvironment [
 
 	(condition evaluateIn: anEnvironment) ifTrue: [ :each | each trueStatements]
 ]
 
 { #category : #accessing }
-JbIfNode >> trueStatements [
+JbWhileNode >> trueStatements [
 	^ trueStatements
 ]
 
 { #category : #accessing }
-JbIfNode >> trueStatements: anObject [
+JbWhileNode >> trueStatements: anObject [
 	trueStatements := anObject
 ]

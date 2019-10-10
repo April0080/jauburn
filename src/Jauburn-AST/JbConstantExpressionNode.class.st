@@ -1,3 +1,6 @@
+"
+This class returns a constant
+"
 Class {
 	#name : #JbConstantExpressionNode,
 	#superclass : #Object,

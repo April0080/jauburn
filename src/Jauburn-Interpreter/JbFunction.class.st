@@ -29,6 +29,12 @@ JbFunction >> body: anObject [
 { #category : #api }
 JbFunction >> call: arguments in: callEnvironment [
 	"You need to implement this method!  arguments will contain the arguments to pass to this function and callEnvironment will contain the environment in place when this function was called."
+	
+	| funcEnv |
+	funcEnv := JbEnvironment newFromKeys: self parameters andValue: arguments.
+	funcEnv outerEnvironment: environment.
+
+	body evaluateIn: funcEnv
 ]
 
 { #category : #accessing }

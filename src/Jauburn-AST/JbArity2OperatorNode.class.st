@@ -1,3 +1,6 @@
+"
+class with all of the math operations
+"
 Class {
 	#name : #JbArity2OperatorNode,
 	#superclass : #Object,

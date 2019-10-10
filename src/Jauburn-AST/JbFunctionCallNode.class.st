@@ -1,3 +1,6 @@
+"
+This class will create a function call node
+"
 Class {
 	#name : #JbFunctionCallNode,
 	#superclass : #Object,
@@ -16,6 +19,15 @@ JbFunctionCallNode >> arguments [
 { #category : #accessing }
 JbFunctionCallNode >> arguments: anObject [
 	arguments := anObject
+]
+
+{ #category : #api }
+JbFunctionCallNode >> evaluateIn: environment [ 
+
+	| evalArg |
+	evalArg := arguments collect: [:arg | arg evaluateIn: environment].
+	^(environment at: identifier) call: evalArg in: environment	
+
 ]
 
 { #category : #accessing }

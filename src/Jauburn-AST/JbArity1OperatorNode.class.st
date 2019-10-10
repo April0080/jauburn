@@ -1,3 +1,6 @@
+"
+negative function
+"
 Class {
 	#name : #JbArity1OperatorNode,
 	#superclass : #Object,
@@ -7,6 +10,18 @@ Class {
 	],
 	#category : #'Jauburn-AST-Core'
 }
+
+{ #category : #'as yet unclassified' }
+JbArity1OperatorNode >> evaluateIn: environment [ 
+
+	"negative value"
+
+	| value |
+	value := self operand evaluateIn: environment.
+	self operator = $-
+		ifTrue: [ ^(0 - value) ].
+	
+]
 
 { #category : #accessing }
 JbArity1OperatorNode >> operand [

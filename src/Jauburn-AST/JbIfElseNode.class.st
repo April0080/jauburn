@@ -1,3 +1,6 @@
+"
+if else node class
+"
 Class {
 	#name : #JbIfElseNode,
 	#superclass : #JbIfNode,
@@ -6,6 +9,14 @@ Class {
 	],
 	#category : #'Jauburn-AST-Core'
 }
+
+{ #category : #api }
+JbIfElseNode >> executeIn: anEnvironment [
+
+	(condition evaluateIn: anEnvironment) 
+	ifTrue: [ :each | each trueStatements] 
+	ifFalse: [ :each | each falseStatements ]
+]
 
 { #category : #accessing }
 JbIfElseNode >> falseStatements [

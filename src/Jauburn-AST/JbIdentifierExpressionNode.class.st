@@ -1,3 +1,6 @@
+"
+identifier node class
+"
 Class {
 	#name : #JbIdentifierExpressionNode,
 	#superclass : #Object,

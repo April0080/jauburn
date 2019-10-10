@@ -1,3 +1,6 @@
+"
+return statement node
+"
 Class {
 	#name : #JbReturnStatementNode,
 	#superclass : #Object,
@@ -6,6 +9,12 @@ Class {
 	],
 	#category : #'Jauburn-AST-Core'
 }
+
+{ #category : #api }
+JbReturnStatementNode >> executeIn: environment [ 
+
+	environment at: (self expression evaluateIn: environment)
+]
 
 { #category : #accessing }
 JbReturnStatementNode >> expression [
